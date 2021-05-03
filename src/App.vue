@@ -1,16 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <TForm url="/posts" :form="form" v-slot="{ json, loading }">
+    <template v-if="loading"> loading... </template>
+    <template v-else>
+      <input type="text" v-model="form.body" />
+      <input type="text" v-model="form.title" />
+      <button type="submit">save</button>
+    </template>
+    {{ json }}
+  </TForm>
+  <TFetch
+    url="/posts"
+    v-slot="{ json: posts, loading }"
+    :options="{ params: { _limit: 5 } }"
+  >
+    <template v-if="loading"> loading... </template>
+    <template v-else>
+      <ul>
+        <li v-for="post in posts" :key="post.id">
+          {{ post.title }}
+        </li>
+      </ul>
+    </template>
+  </TFetch>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+
+  data: () => ({
+    form: {
+      title: "",
+      body: "",
+    },
+  }),
 };
 </script>
 
