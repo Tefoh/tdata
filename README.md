@@ -160,3 +160,14 @@ and the usage in template will be like this:
 | response     | object       | entire response from api               |
 | error        | object       | error response                         |
 | errorMessage | string       | error message                          |
+
+## props
+
+| prop name | type   | description                                               |
+| --------- | ------ | --------------------------------------------------------- |
+| url       | string | url (full url if baseURL not set)                         |
+| method    | string | method type(TFetch default: 'get', TForm default: 'post') |
+| options   | object | headers, parameted and etc                                |
+| form      | object | the form you want to submit, only for TForm               |
+
+##
