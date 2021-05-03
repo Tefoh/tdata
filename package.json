@@ -69,6 +69,7 @@
   },
   "homepage": "https://github.com/Tefoh/tdata#readme",
   "files": [
-    "README.md"
+    "README.md",
+    "dist/index.js"
   ]
 }
