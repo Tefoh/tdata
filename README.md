@@ -163,11 +163,16 @@ and the usage in template will be like this:
 
 ## props
 
-| prop name | type   | description                                               |
-| --------- | ------ | --------------------------------------------------------- |
-| url       | string | url (full url if baseURL not set)                         |
-| method    | string | method type(TFetch default: 'get', TForm default: 'post') |
-| options   | object | headers, parameted and etc                                |
-| form      | object | the form you want to submit, only for TForm               |
+| name    | type   | description                                               |
+| ------- | ------ | --------------------------------------------------------- |
+| url     | string | url (full url if baseURL not set)                         |
+| method  | string | method type(TFetch default: 'get', TForm default: 'post') |
+| options | object | headers, parameted and etc                                |
+| form    | object | the form you want to submit, only for TForm               |
 
-##
+## options
+
+| name    | type          | description                                    |
+| ------- | ------------- | ---------------------------------------------- |
+| baseURL | string        | base url of all request with related component |
+| axios   | axiosInstance | axios instance with headers, baseURL and ...   |
